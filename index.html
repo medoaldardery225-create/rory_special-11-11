@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11/11 Special For Rory ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
+        body {
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            color: #fff; min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px; padding: 30px; max-width: 400px; width: 100%;
+            text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        h1 { font-size: 24px; margin-bottom: 15px; color: #ffb6c1; }
+        p { font-size: 15px; line-height: 1.6; margin-bottom: 25px; color: #f0f0f0; }
+        .date-badge {
+            display: inline-block; background: #ff4d6d; color: white;
+            padding: 6px 16px; border-radius: 50px; font-size: 14px;
+            font-weight: bold; margin-bottom: 20px;
+        }
+        .counter-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px;
+        }
+        .time-box {
+            background: rgba(0, 0, 0, 0.25); padding: 10px 5px; border-radius: 12px;
+        }
+        .time-box span { display: block; font-size: 18px; font-weight: bold; color: #ffccd5; }
+        .time-box label { font-size: 11px; color: #ccc; }
+        .heart { font-size: 40px; color: #ff4d6d; margin-bottom: 15px; }
+        .footer-note { margin-top: 15px; font-size: 13px; color: #ddd; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="heart">❤️</div>
+        <div class="date-badge">11 / 11 Special Day</div>
+        <h1>إلى أجمل حاجة في حياتي، Rory ✨</h1>
+        <p>كل سنة وأنتي منورة دنيتي، وكل ١١/١١ واحنا مع بعض وبنعمل ذكريات أحلى وأحلى سوا.</p>
+
+        <div class="counter-grid">
+            <div class="time-box"><span id="days">00</span><label>يوم</label></div>
+            <div class="time-box"><span id="hours">00</span><label>ساعة</label></div>
+            <div class="time-box"><span id="minutes">00</span><label>دقيقة</label></div>
+            <div class="time-box"><span id="seconds">00</span><label>ثانية</label></div>
+        </div>
+
+        <div class="footer-note">Love you, Rory ❤️</div>
+    </div>
+
+    <script>
+        const startDate = new Date("2026-04-15T00:00:00");
+        function updateCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+            document.getElementById("days").innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById("hours").innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+        }
+        setInterval(updateCounter, 1000);
+        updateCounter();
+    </script>
+</body>
+</html>
